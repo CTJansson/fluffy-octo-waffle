@@ -1,0 +1,39 @@
+<header>
+    <nav>
+      <div>
+        <button
+          type="button"
+          data-toggle="collapse"
+          data-target=".navbar-collapse"
+          aria-label="Toggle navigation"
+          [attr.aria-expanded]="isExpanded"
+          (click)="toggle()"
+        >
+          <span></span>
+        </button>
+        <div [ngClass]="{ show: isExpanded }">
+          <ul>
+            <li
+                [routerLinkActive]="['active']"
+                [routerLinkActiveOptions]="{ exact: true }">
+              <a [routerLink]="['/']">Home</a>
+            </li>
+  
+            <li *ngIf="authenticated$ | async"
+                [routerLinkActive]="['active']"
+                [routerLinkActiveOptions]="{ exact: true }">
+              <a [routerLink]="['/user-session']">Show User Session</a>
+            </li>
+  
+            <li *ngIf="anonymous$ | async">
+              <a href="/bff/login">Login</a>
+            </li>
+  
+            <li *ngIf="authenticated$ | async">
+              <a href="{{logoutUrl$ | async}}">Signout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>

@@ -1,0 +1,54 @@
+{
+    "version": "0.2.0",
+    "compounds": [
+      {
+        "name": "All",
+        "configurations": ["API", "BFF", "IDP"],
+        "presentation": {
+          "hidden": false,
+          "group": "compunds",
+        }
+      },
+    ],
+    "configurations": [
+        {
+            "name": "API",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-api",
+            "program": "${workspaceFolder}/api/bin/Debug/net8.0/api.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/api",
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            // "console": "externalTerminal",
+        },
+        {
+            "name": "BFF",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-bff",
+            "program": "${workspaceFolder}/bff/bin/Debug/net8.0/bff.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/bff",
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            // "console": "externalTerminal",
+        },
+        {
+          "name": "IDP",
+          "type": "coreclr",
+          "request": "launch",
+          "preLaunchTask": "build-idp",
+          "program": "${workspaceFolder}/idp/bin/Debug/net8.0/idp.dll",
+          "args": [],
+          "cwd": "${workspaceFolder}/idp",
+          "env": {
+              "ASPNETCORE_ENVIRONMENT": "Development"
+          },
+          // "console": "externalTerminal",
+      }
+    ]
+}

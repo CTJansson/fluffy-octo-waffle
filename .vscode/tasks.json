@@ -1,0 +1,54 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "build",
+        "type": "process",
+        "command": "dotnet",
+        "args": [
+          "build",
+          "${workspaceFolder}/plum-dumplings.sln",
+          "/property:GenerateFullPaths=true",
+          "/consoleloggerparameters:NoSummary"
+        ],
+        "problemMatcher": "$msCompile"
+      },
+      {
+        "label": "build-api",
+        "type": "process",
+        "command": "dotnet",
+        "args": [
+          "build",
+          "${workspaceFolder}/api/api.csproj",
+          "/property:GenerateFullPaths=true",
+          "/consoleloggerparameters:NoSummary"
+        ],
+        "problemMatcher": "$msCompile"
+      },
+      {
+        "label": "build-idp",
+        "type": "process",
+        "command": "dotnet",
+        "args": [
+          "build",
+          "${workspaceFolder}/idp/idp.csproj",
+          "/property:GenerateFullPaths=true",
+          "/consoleloggerparameters:NoSummary"
+        ],
+        "problemMatcher": "$msCompile"
+      },
+      {
+        "label": "build-bff",
+        "type": "process",
+        "command": "dotnet",
+        "args": [
+          "build",
+          "${workspaceFolder}/bff/bff.csproj",
+          "/property:GenerateFullPaths=true",
+          "/consoleloggerparameters:NoSummary"
+        ],
+        "problemMatcher": "$msCompile"
+      }
+    ]
+
+}
